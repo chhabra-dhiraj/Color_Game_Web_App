@@ -7,27 +7,27 @@
 </head>
 <body>
 	<h1>The Color Guessing Game</h1>
-	<div class="display_events"></div>
+	<div class="display_events">Try Again!</div>
 
-	<div id="centerDiv">
-		<div id="container" class="box-middle">
-			<div id="color_option"><input id="new_colors" type="button" value="New Colors"></div>
-			<div id="mode_container">
-				<input type="button" value="Easy" class="mode">
-				<input type="button" value="Hard" class="mode">
-			</div>		
-			<div class="color_boxes">1</div>
-			<div class="color_boxes">2</div>
-			<div class="color_boxes">3</div>
-			<div class="color_boxes">4</div>
-			<div class="color_boxes">5</div>
-			<div class="color_boxes">6</div>
+	<div id="container">
+		<div><input id="new_colors" type="button" value="New Colors"></div>
 
-			<div id="color_display">RGB(0, 0, 255)</div>
+		<input type="button" class="color_boxes" value="1">
+		<input type="button" class="color_boxes" value="2">
+		<input type="button" class="color_boxes" value="3">
+		<input type="button" class="color_boxes" value="4">
+		<input type="button" class="color_boxes" value="5">
+		<input type="button" class="color_boxes" value="6">
+		<div id="mode_container">
+			<input type="button" value="Easy" class="mode">
+			<span>or</span>
+			<input type="button" value="Hard" class="mode">
 		</div>
+		<div id="color_display"></div>
 	</div>
 
-	<div class="display_events"></div>
+
+	<div class="display_events">Try Again!</div>
 	<script type="text/javascript" src="Color_Game.js"></script>
 </body>
 </html>

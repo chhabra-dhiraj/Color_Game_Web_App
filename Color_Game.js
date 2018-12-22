@@ -5,7 +5,7 @@ var newColors = document.getElementById("new_colors");
 var displayEvents = document.querySelectorAll(".display_events");
 
 colors = [];
-mode[0].style.backgroundColor =  "rgb(0, 0, 255)";
+
 var numOfSquares = 3;
 var pickedColor;
 var clickedColor;
@@ -18,14 +18,15 @@ setColorDisplay();
 
 newColors.addEventListener("click", function() {
 	for(var i = 0; i < displayEvents.length; i++) {
-		displayEvents[i].innerHTML = "";
+		displayEvents[i].innerHTML = "Try Again!";
+		displayEvents[i].style.visibility = "hidden";
 	}
 	newColors.value = "New Colors";
 	generateColors(numOfSquares);
 	setColorDisplay();
 });
 
-for(var i = 0; i < colors.length; i++) {
+for(var i = 0; i < colorBoxes.length; i++) {
 	colorBoxes[i].addEventListener("click", function() {
 		clickedColor = this.style.backgroundColor;
 		colorCheckFunction();
@@ -55,7 +56,8 @@ for(var i = 0; i < mode.length; i++) {
 function colorCheckFunction() {
 	if(clickedColor === pickedColor) {
 		for(var i = 0; i < displayEvents.length; i++) {
-			displayEvents[i].innerHTML = "Hurray! You have won.";
+			displayEvents[i].innerHTML = "Wohoo! You have picked the right color :)";
+			displayEvents[i].style.visibility = "visible";
 		}
 		document.body.style.backgroundColor = clickedColor;
 		newColors.value = "Play Again?";
@@ -68,14 +70,11 @@ function colorCheckFunction() {
 
 function modeColor() {
 	if(numOfSquares === 3) {
-		mode[0].style.backgroundColor = "rgb(0, 0, 255)";
-		mode[1].style.backgroundColor = "#232434";
+		
 	} else {
-		mode[1].style.backgroundColor = "rgb(0, 0, 255)";
-		mode[0].style.backgroundColor = "#232434";
+		
 	}
 }
-
 
 function generateColors(numOfSquares) {
 	var i;
@@ -84,11 +83,13 @@ function generateColors(numOfSquares) {
 
 		colors.push(randomColor());
 		colorBoxes[i].style.backgroundColor = colors[i];
+		colorBoxes[i].style.display = "block";
+		colorBoxes[i].style.border = "inherit";
 	}
 
 	if(numOfSquares < colorBoxes.length) {
 		while(i < colorBoxes.length) {
-			colorBoxes[i].style.backgroundColor = "#232434";
+			colorBoxes[i].style.display = "none";
 			i++;
 		}
 	}
@@ -105,10 +106,12 @@ function setColorDisplay() {
 	pickedColor = pickColor();
 	colorDisplay.textContent = pickedColor;
 	colorDisplay.style.color = "white";
+	// colorDisplay.style.text-transform = "capitalize";
 }
 
+
 function pickColor() {
-	var random = Math.floor(Math.random() * (numOfSquares + 1));
+	var random = Math.floor(Math.random() * (numOfSquares));
 	return colors[random]; 
 }
 
