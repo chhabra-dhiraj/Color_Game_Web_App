@@ -3,13 +3,31 @@
 <head>
 	<title>Color Selecting Game</title>
 	<link rel="stylesheet" type="text/css" href="Color_Game.css">
-
 	<meta charset="utf-8"/>
-	
-
 </head>
 <body>
+	<h1>The Color Guessing Game</h1>
+	<div class="display_events"></div>
 
-<script type="text/javascript" src="Color_Game.js"></script>  
+	<div id="centerDiv">
+		<div id="container" class="box-middle">
+			<div id="color_option"><input id="new_colors" type="button" value="New Colors"></div>
+			<div id="mode_container">
+				<input type="button" value="Easy" class="mode">
+				<input type="button" value="Hard" class="mode">
+			</div>		
+			<div class="color_boxes">1</div>
+			<div class="color_boxes">2</div>
+			<div class="color_boxes">3</div>
+			<div class="color_boxes">4</div>
+			<div class="color_boxes">5</div>
+			<div class="color_boxes">6</div>
+
+			<div id="color_display">RGB(0, 0, 255)</div>
+		</div>
+	</div>
+
+	<div class="display_events"></div>
+	<script type="text/javascript" src="Color_Game.js"></script>
 </body>
 </html>

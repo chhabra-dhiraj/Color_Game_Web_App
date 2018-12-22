@@ -1,3 +1,68 @@
 body {
-	background: #232434;
+	background: rgb(0, 0, 255);
+	float: left;
 }
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+#centerDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#container {
+	width: 50%;
+	height: 50%;
+	float: left;	
+	border: 10px solid white;
+	background: #232434;
+	padding: 10%;
+}
+
+.color_boxes {
+	color: transparent;
+	width: 30%;
+	height: 43.36%;
+	margin: 1.66%;
+	float: left;
+	border-radius: 20px;
+}
+
+#new_colors {
+	color: white;
+	background: none;
+	border: none;
+	outline: none;
+	color:hover: #232434;
+}
+
+#new_colors:hover {
+	background: rgb(0, 0, 255);
+}
+
+.mode{
+	color: white;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.mode:hover {
+	background: rgb(0, 0, 255);
+}
+
+#picked_color {
+	color: white;
+}
+
+.display_events {
+	color: white;
+}
+
+
